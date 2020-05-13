@@ -9,6 +9,7 @@ const Button = ({text, handler}) => (
 const App = (props) => {
   const [selected, setSelected] = useState(0);
   const [counts, setCounts] = useState(Array.apply(null, new Array(props.anecdotes.length)).map(Number.prototype.valueOf,0));
+  const [maxIndex, setMaxIndex] = useState(0);
 
   console.log(counts);
 
@@ -16,10 +17,14 @@ const App = (props) => {
     const copy = [...counts];
     copy[selected] = copy[selected] +1;
     setCounts(copy);
+    setMaxIndex(copy.indexOf(Math.max(...copy)))
+    console.log(maxIndex)
+
   } 
   
   return (
     <>
+    <h1>Anecdote of the Day</h1>
     <div>
       {props.anecdotes[selected]}
     </div>
@@ -34,6 +39,8 @@ const App = (props) => {
       vote
     </button> */}
     </div>
+    <h1>Anecdote with most votes</h1>
+    <div>{props.anecdotes[maxIndex]}</div>
     </>
   )
 
