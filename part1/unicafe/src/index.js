@@ -8,14 +8,6 @@ const App = () => {
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
 
-  // const [good, setValue] = useState(0)
-  // const [neutral, setValue] = useState(0)
-  // const [bad, setValue] = useState(0)
-
-  // const setToValue = (newValue) => () => {
-  //   setToValue(newValue)
-  // }
-
   return (
     <div>
       <h1>give feedback</h1>
